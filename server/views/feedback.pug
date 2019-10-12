@@ -1,0 +1,48 @@
+extends layouts/index 
+
+block content
+
+    #feedback.container
+        .row
+            .col-sm-4
+                h1.feedback-form-title Send us feedback
+                form.feedback-form
+                    .form-group
+                    label(for='feedback-form-name') Name
+                    input#feedback-form-name.form-control(type='text', placeholder='Enter your name')
+                    .form-group
+                    label(for='feedback-form-title') Title
+                    input#feedback-form-title.form-control(type='text', placeholder='Title of your feedback')
+                    .form-group
+                    label(for='feedback-form-message') Message
+                    textarea#feedback-form-message.form-control(type='text', placeholder='Enter your message, then hit the submit', rows='6')
+                    button.btn.btn-default.pull-right(type='submit') Submit
+
+            aside.col-sm-8
+                .maincontent.feedback
+                    h2.article-title Recent Feedback
+                    .feedback-messages
+                    .feedback-item.item-list.media-list
+                        .feedback-info.media-body
+                            .feedback-head
+                            .feedback-title
+                                | Best Meetup Ever 
+                                small.feedback-name.label.label-info Awesome
+                            .feedback-message I really love this meetup. Please don't let it end.
+                    .feedback-item.item-list.media-list
+                        .feedback-info.media-body
+                            .feedback-head
+                            .feedback-title
+                                | Meeting Time 
+                                small.feedback-name.label.label-info Jane
+                            .feedback-message
+                            | Would you consider moving the meeting time 30 minutes to about 6pm. It's tough to make it to the meetings
+                            | on time right after work.
+                    .feedback-item.item-list.media-list
+                        .feedback-info.media-body
+                            .feedback-head
+                            .feedback-title
+                                | Great Speaker 
+                                small.feedback-name.label.label-info Roy
+                            .feedback-message
+                            | I really enjoyed the speaker this month. Would love to hear another presentation.

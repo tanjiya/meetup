@@ -24,22 +24,3 @@ block content
                     .form-group
                         label(for='feedback-form-message') Message
                         textarea#feedback-form-message.form-control(type='text', name='fbMessage', placeholder='Enter your message, then hit the submit', rows='6')=fbMessage
-                    button.btn.btn-default.pull-right(type='submit') Submit
-
-            aside.col-sm-8
-                .maincontent.feedback
-                    h2.article-title Recent Feedback
-
-                    if !list || !list.length
-                        | No Feedback So Far! Be The First.
-                    else
-                        .feedback-messages
-                            each item in list
-                                .feedback-item.item-list.media-list
-                                    .feedback-info.media-body
-                                        .feedback-head
-                                            .feedback-title=item.title
-                                                | &nbsp;
-                                                small.feedback-name.label.label-info=item.name
-                                            .feedback-message=item.message  
-                    

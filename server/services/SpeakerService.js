@@ -111,7 +111,7 @@ class SpeakerService
     {
         // Wait for The readFile Promise to be Executed
         const data = await readFile(this.dataFile, 'utf8');
-        
+
         if (!data) return [];
         
         return JSON.parse(data).speakers;

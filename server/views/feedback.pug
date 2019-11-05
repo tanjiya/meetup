@@ -1,0 +1,45 @@
+extends layouts/index 
+
+block content
+
+    #feedback.container
+        .row
+            .col-sm-4
+                h1.feedback-form-title Send us feedback
+
+                if error
+                    .alert.alert-danger
+                        | Please Fillout All of The Fields!
+                else if success
+                    .alert.alert-success
+                        | Thanks for your feedback!
+
+                form.feedback-form(action='/feedback', method='POST')
+                    .form-group
+                        label(for='feedback-form-name') Name
+                        input#feedback-form-name.form-control(type='text', name='fbName', value=fbName  placeholder='Enter your name')
+                    .form-group
+                        label(for='feedback-form-title') Title
+                        input#feedback-form-title.form-control(type='text', name='fbTitle', value=fbTitle  placeholder='Title of your feedback')
+                    .form-group
+                        label(for='feedback-form-message') Message
+                        textarea#feedback-form-message.form-control(type='text', name='fbMessage', placeholder='Enter your message, then hit the submit', rows='6')=fbMessage
+                    button.btn.btn-default.pull-right(type='submit') Submit
+
+            aside.col-sm-8
+                .maincontent.feedback
+                    h2.article-title Recent Feedback
+
+                    if !list || !list.length
+                        | No Feedback So Far! Be The First.
+                    else
+                        .feedback-messages
+                            each item in list
+                                .feedback-item.item-list.media-list
+                                    .feedback-info.media-body
+                                        .feedback-head
+                                            .feedback-title=item.title
+                                                | &nbsp;
+                                                small.feedback-name.label.label-info=item.name
+                                            .feedback-message=item.message  
+                    

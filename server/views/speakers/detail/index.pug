@@ -1,0 +1,23 @@
+extends ../../layouts/index 
+
+block content
+
+    #speakerDetail.container
+        .row
+            .col-sm-8
+                article.speakerslist
+                    h3.speakerslist-title=speaker.title
+                    h5.speakerslist-name
+                        | with 
+                        a(href=`./${speaker.shortname}`)=speaker.name
+                    p.speakerslist-info
+                        a(href=`./${speaker.shortname}`)
+                        img.speakerslist-img.img-responsive.pull-left(src=`/images/speakers/${speaker.shortname}.jpg`, alt=`Photo of ${speaker.shortname}`)
+                    !=speaker.description
+
+            aside.col-sm-4
+                article.sidebar
+
+                    include ../../includes/art-work
+									
+                                    

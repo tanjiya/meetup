@@ -1,0 +1,33 @@
+{
+  "name": "meet-up",
+  "version": "1.0.0",
+  "description": "This is a Meet Up app!",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm mocha --exit --recursive test/",
+    "start": "nodemon bin/www"
+  },
+  "keywords": [],
+  "author": "Tanjiya Zahir Bhuiyan",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.1.2",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.2.0",
+    "http-error": "0.0.6",
+    "mongoose": "^5.7.5",
+    "multer": "^1.4.2",
+    "nodemon": "^1.19.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.4",
+    "sharp": "^0.23.2",
+    "uuid": "^3.3.3"
+  }
+}
